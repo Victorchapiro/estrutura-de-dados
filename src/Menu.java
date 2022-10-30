@@ -12,6 +12,7 @@ public class Menu {
     }
     public static void subMenu(){
         if (opcao==1){
+            Vetor vetor = new Vetor();
             int opVetor=0;
             while(opVetor!=5){
                 System.out.println("--------------------- \n|"+" 1- Inserir dado   |" +"\n|" + " 2- Alterar dado   |"+
@@ -19,12 +20,29 @@ public class Menu {
                         "\n---------------------");
                 opVetor= sc.nextInt();
                 switch (opVetor){
-                    case 1-> System.out.println("1");
-                    case 2->System.out.println("1");
-                    case 3->System.out.println("1");
-                    case 4->System.out.println("1");
-                    case 5->menuInicial();
-                    default -> System.out.println("Entre com um uma opção entre 1 e 5");
+                    case 1: {
+                        System.out.println("Qual valor inserir no vetor?");
+                        int novoVetor = sc.nextInt();
+                        vetor.add(novoVetor);
+                    }
+                    case 2: {
+                        System.out.println("Qual índice gostaria de alterar?");
+                        int indice = sc.nextInt();
+                        System.out.println("Qual novo valor?");
+                        int novoValor = sc.nextInt();
+                        vetor[indice] = novoValor;
+                    }
+                    case 3: {
+                        System.out.println("Qual valor buscar no vetor?");
+                        int valor = sc.nextInt();
+                        vetor.indexOf(valor);
+                    }
+
+                    case 4: System.out.println(vetor);
+
+                    case 5: menuInicial();
+
+                    default: System.out.println("Entre com um uma opção entre 1 e 5");
                 }
             }
         }
@@ -47,7 +65,7 @@ public class Menu {
                     case 2:{
                         int posicao,dado;
                         System.out.println("Qual indice gostaria de alterar?");
-                        posicao=sc.nextInt();
+                        int valor=sc.nextInt();
                         System.out.println("Qual novo valor?");
                         dado=sc.nextInt();
                         lista.alterar(posicao,dado);
