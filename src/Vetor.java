@@ -1,6 +1,6 @@
 public class Vetor {
     int[]vetor;
-    public Vetor(int tamanho) {
+    public Vetor() {
         int[]Novovetor=new int[tamanho];
         vetor=Novovetor;
     }
@@ -23,8 +23,6 @@ public class Vetor {
             }
         }
         }
-
-
 
     }
 
